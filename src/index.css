@@ -1,5 +1,6 @@
 @import url("https://liniui.netlify.app/component.css");
 @import url(./styles/home.css);
+@import url(./styles/login.css);
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
