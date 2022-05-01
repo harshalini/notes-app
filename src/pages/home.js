@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 export const Home = () => {
     return (
         <div>
             <img src="../assets/note-img.svg" className="note-img" />
             <p className="txt">Express your thoughts and write them down!</p>
-            <button id="primary-btn">Write now</button>
+            <Link to="/notes"><button id="primary-btn">Write now</button></Link>
         </div>
     )
 }
