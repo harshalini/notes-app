@@ -1,7 +1,6 @@
+@import url("https://unpkg.com/mockman-js@latest/dist/style.css");
 @import url("https://liniui.netlify.app/component.css");
-@import url(./styles/home.css);
-@import url(./styles/login.css);
-@import url(./styles/notes.css);
+@import url(./styles/appStyles.css);
 @import url("https://use.fontawesome.com/releases/v6.1.1/css/all.css");
 body {
   margin: 0;
