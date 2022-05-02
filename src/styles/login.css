@@ -31,6 +31,7 @@
     margin: auto;
     box-shadow: var(--box-shadow);
     border: solid 3px var(--white);
+    margin-top: 8rem;
 }
 
 .form-container span {
