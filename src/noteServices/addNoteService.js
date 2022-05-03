@@ -5,7 +5,7 @@ export const AddNoteHandler = async (data) => {
     const res = await axios.post(
       "/api/notes",
       {
-        note: { ...data }
+        note: data 
       },
       {
         headers: { authorization: token }
