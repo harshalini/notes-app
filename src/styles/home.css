@@ -19,6 +19,10 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: var(--navbar-color);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100vw;
 }
 
 .logo {
@@ -66,7 +70,7 @@ nav ul li {
 }
 
 .note-img {
-    margin-top: 1.5rem;
+    margin-top: 8rem;
     height: 27rem;
 }
 
