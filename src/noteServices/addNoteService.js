@@ -1,6 +1,6 @@
-import { token } from "../token";
 import axios from "axios";
 export const AddNoteHandler = async (data) => {
+  const authToken = localStorage.getItem("authToken")
   try {
     const res = await axios.post(
       "/api/notes",
@@ -8,7 +8,7 @@ export const AddNoteHandler = async (data) => {
         note: data 
       },
       {
-        headers: { authorization: token }
+        headers: { authorization: authToken }
       }
     );
     return res;

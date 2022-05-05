@@ -66,7 +66,15 @@ nav ul li {
 }
 
 .login {
-    color: var(--black);
+    color: var(--white);
+}
+.logout-btn {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
 }
 
 .note-img {
@@ -88,7 +96,7 @@ nav ul li {
     font-weight: 500;
 }
 
-#primary-btn:hover {
+#primary-btn:hover, .login-btn:hover, .login-btn:hover {
     background-color: var(--background-color);
     color: var(--white);
 }

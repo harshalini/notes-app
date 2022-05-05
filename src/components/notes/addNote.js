@@ -1,4 +1,4 @@
-import { useNoteData } from "../../context/noteContext"
+import { useNoteData } from "../../context/allContext"
 
 export const AddNote = () => {
     const { noteState, dispatch, AddNewNote } = useNoteData();
@@ -7,7 +7,7 @@ export const AddNote = () => {
             <form className="note-form"
                 onSubmit={(e) => {
                     e.preventDefault();
-                   AddNewNote(noteState);
+                    AddNewNote(noteState);
                     dispatch({ type: "CLEAR-NOTE" });
                 }
                 }>

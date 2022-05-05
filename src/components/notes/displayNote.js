@@ -1,5 +1,5 @@
 import React from "react";
-import { useNoteData } from "../../context/noteContext";
+import { useNoteData } from "../../context/allContext";
 
 export const DisplayNote = () => {
   const { note } = useNoteData();
