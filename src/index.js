@@ -13,9 +13,9 @@ ReactDOM.render(
     <Router>
       <AuthenticationProvider>
         <ArchiveProvider>
-        <NoteDataProvider>
-          <App />
-        </NoteDataProvider>
+          <NoteDataProvider>
+            <App />
+          </NoteDataProvider>
         </ArchiveProvider>
       </AuthenticationProvider>
     </Router>

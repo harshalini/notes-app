@@ -1,7 +1,7 @@
 import axios from "axios"
-const authToken = localStorage.getItem("authToken")
 
 const AddNoteToArchive = async (data, _id) => {
+    const authToken = localStorage.getItem("authToken")
     try {
         const res = await axios.post(`/api/notes/archives/${_id}`, {
             note: data
@@ -9,6 +9,7 @@ const AddNoteToArchive = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
+        console.log(res)
         return res;
     }
     catch (error) {
@@ -17,6 +18,7 @@ const AddNoteToArchive = async (data, _id) => {
 }
 
 const RestoreFromArchive = async (data, _id) => {
+    const authToken = localStorage.getItem("authToken")
     try {
         const res = await axios.post(`/api/archives/restore/${_id}`, {
             note: data
@@ -24,6 +26,7 @@ const RestoreFromArchive = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
+            console.log(res)
         return res;
     }
     catch (error) {

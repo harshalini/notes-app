@@ -17,7 +17,7 @@ export const DisplayNote = () => {
               <p className="note-content">{content}</p>
             </div>
             <div className="note-actions">
-              <button onClick={() => { ArchiveNote(note, _id) }}><i className="fa-solid fa-arrow-down-long"></i></button>
+              <button onClick={() => ArchiveNote(note, _id)}><i className="fa-solid fa-arrow-down-long"></i></button>
               <button><i className="fa-solid fa-trash-can"></i></button>
               <button><i className="fa-solid fa-pen-to-square"></i></button>
             </div>

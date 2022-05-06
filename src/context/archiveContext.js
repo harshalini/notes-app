@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext, useEffect } from "react";
 import { AddNoteToArchive, RestoreFromArchive } from "../noteServices/allServices";
 import axios from "axios";
-const ArchiveContext = createContext()
+const ArchiveContext = createContext();
 
 const ArchiveProvider = ({ children }) => {
   const [noteArchive, setNoteArchive] = useState([])

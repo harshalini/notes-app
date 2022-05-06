@@ -18,7 +18,7 @@ const NoteDataProvider = ({ children }) => {
         });
         setNote(notes);
       } catch(error) {
-        console.error(error);
+        console.log(error);
       }
     })();
   }, [note]);
