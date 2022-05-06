@@ -21,7 +21,7 @@ const NoteDataProvider = ({ children }) => {
         console.error(error);
       }
     })();
-  }, []);
+  }, [note]);
 
   const [noteState, dispatch] = useReducer(NoteReducer, {
     title: "",
