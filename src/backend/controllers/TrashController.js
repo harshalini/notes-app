@@ -2,12 +2,12 @@ import { Response } from "miragejs";
 import { requiresAuth } from "../utils/authUtils";
 
 /**
- * All the routes related to Trash are present here.
+ * All the routes related to Trash  are present here.
  *  These are Privately accessible routes.
  * */
 
 /**
- * This handler handles gets all trashed notes in the db.
+ * This handler handles gets all trash notes in the db.
  * send GET Request at /api/trash
  * */
 
@@ -26,8 +26,8 @@ export const getAllTrashedNotesHandler = function (schema, request) {
 };
 
 /**
- * This handler handles deletes note from archive.
- * send DELETE Request at /api/archives/delete/:noteId
+ * This handler handles deletes note from user notes.
+ * send DELETE Request at /api/trash/delete/:noteId
  * */
 
 export const deleteFromTrashHandler = function (schema, request) {
@@ -48,8 +48,8 @@ export const deleteFromTrashHandler = function (schema, request) {
 };
 
 /**
- * This handler handles restoring the archived notes to user notes.
- * send POST Request at /api/archives/restore/:noteId
+ * This handler handles restoring the trash notes to user notes.
+ * send POST Request at /api/trash/restore/:noteId
  * */
 
 export const restoreFromTrashHandler = function (schema, request) {

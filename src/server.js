@@ -3,6 +3,7 @@ import {
   deleteFromArchivesHandler,
   getAllArchivedNotesHandler,
   restoreFromArchivesHandler,
+  moveArchiveToTrashHandler
 } from "./backend/controllers/ArchiveController";
 import {
   deleteFromTrashHandler,
@@ -70,6 +71,10 @@ export function makeServer({ environment = "development" } = {}) {
       this.delete(
         "/archives/delete/:noteId",
         deleteFromArchivesHandler.bind(this)
+      );
+      this.post(
+        "/archives/trash/:noteId",
+        moveArchiveToTrashHandler.bind(this)
       );
 
       //trash routes (private)
