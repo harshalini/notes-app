@@ -8,6 +8,7 @@ export const ArchivePage = () => {
             <div>
                 <div className="archive-div">
                     <h1 className="note-heading">Your Archives</h1>
+                    {noteArchive.length > 0? 
                     <div className="note-grid">
                         {noteArchive.map(({ title, content, _id }) => (
                             <div key={_id} className="added-note">
@@ -23,7 +24,8 @@ export const ArchivePage = () => {
                             </div>
                         )
                         )}
-                    </div>
+                    </div>: 
+                    <h2>No notes in archive</h2>} 
                 </div>
             </div>
         </div>

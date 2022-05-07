@@ -7,6 +7,7 @@ export const DisplayNote = () => {
   return (
     <div>
       <h1 className="note-heading">Your Notes</h1>
+      {note.length > 0 ? 
       <div className="note-grid">
         {note.map(({ title, content, _id }) => (
           <div key={_id} className="added-note">
@@ -24,7 +25,8 @@ export const DisplayNote = () => {
           </div>
         )
         )}
-      </div>
+      </div> : 
+      <h2>No notes here! Add a note!</h2>}
     </div>
   );
 }

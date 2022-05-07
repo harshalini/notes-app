@@ -12,7 +12,10 @@ export const AppRouter = () => {
                 <RequiresAuth>
                     <Notes />
                 </RequiresAuth>} />
-            <Route path="/archive" element={<ArchivePage />} />
+                <Route path="/archive" element={
+                <RequiresAuth>
+                    <ArchivePage />
+                </RequiresAuth>} />
         </Routes>
     )
 }
