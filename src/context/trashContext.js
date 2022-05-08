@@ -1,6 +1,4 @@
-import { createContext } from "react";
-import { useState } from "react";
-import { useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { AddNoteToTrash, RestoreFromTrash, DeleteFromTrash, ArchiveToTrash } from "../noteServices/trashService";
 import axios from "axios";
 const TrashContext = createContext();
@@ -25,8 +23,6 @@ const TrashProvider = ({ children }) => {
 
   const TrashNote = async (noteTrash, _id) => {
     const getTrash = await AddNoteToTrash(noteTrash, _id)
-    console.log(getTrash.data.trash)
-    setNoteTrash(getTrash.data.trash)
   }
 
   const RestoreTrashNote = async (noteTrash, _id) => {
@@ -42,7 +38,6 @@ const TrashProvider = ({ children }) => {
   const ArchiveNoteToTrash = async(noteTrash, _id) => {
     const response = await ArchiveToTrash(noteTrash, _id)
     setNoteTrash(response.data.trash)
-    console.log(response.data.archives)
   }
 
   return <TrashContext.Provider value={{ noteTrash, TrashNote, RestoreTrashNote, setNoteTrash, DeleteNoteFromTrash, ArchiveNoteToTrash }}>
