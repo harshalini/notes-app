@@ -1,3 +1,13 @@
+:root {
+    --cadetBlue: cadetblue;
+    --chocolate: chocolate;
+    --darkmagenta: darkmagenta;
+    --palevioletred: palevioletred;
+    --brown: brown;
+    --goldenrod: goldenrod;
+    --seagreen: seagreen;
+}
+
 .flex-div {
     display: flex;
 }
@@ -66,7 +76,9 @@
 .add-btn {
     background: none;
     border: none;
-    margin-left: 23.5rem;
+    margin-left: 10.5rem;
+    margin-top: -2rem;
+    position: absolute;
 }
 
 .add-btn i {
@@ -98,6 +110,38 @@
     position: relative;
     border-radius: 1rem;
     box-shadow: 0px 0px 5px 5px var(--primary-color);
+}
+
+.color-defaultColor {
+    background-color: var(--navbar-color);
+}
+
+.color-cadetblue {
+    background-color: var(--cadetBlue);
+}
+
+.color-chocolate {
+    background-color: var(--chocolate);
+}
+
+.color-darkmagenta {
+    background-color: var(--darkmagenta);
+}
+
+.color-palevioletred {
+    background-color: var(--palevioletred);
+}
+
+.color-brown {
+    background-color: var(--brown);
+}
+
+.color-goldenrod {
+    background-color: var(--goldenrod);
+}
+
+.color-seagreen {
+    background-color: var(--seagreen);
 }
 
 .title-div {
@@ -142,4 +186,95 @@
 
 .archive-div {
     margin-top: 8rem;
+}
+
+/* NOTE FEATURES */
+.feature-btns {
+    margin-left: -4rem;
+}
+
+.feature-btns button {
+    margin-right: 3.5rem;
+}
+
+.note-feature {
+    margin-top: -2rem;
+    position: absolute;
+    border-radius: 1rem;
+    background-color: var(--white);
+}
+
+.color-palette {
+    margin-left: 26rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 6rem;
+    padding: 0.5rem;
+}
+
+.note-color {
+    border-radius: 50%;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0.1rem;
+    cursor: pointer;
+}
+
+.label-div {
+    margin-left: 19rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-div input {
+    width: 3.5rem;
+    height: 0.2rem;
+}
+
+.label-div button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-weight: 700;
+    margin-top: -0.3rem;
+    padding: 0.2rem 0;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.label-and-priority {
+    display: flex;
+}
+
+.note-flex {
+    color: var(--black);
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    width: 5rem;
+}
+
+.added-label {
+    background: radial-gradient(var(--white), var(--secondary-color));
+}
+
+.priority-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -2rem 0 0.2rem 34rem;
+    color: var(--black);
+    padding: 0.5rem;
+}
+
+.priority-div label {
+    margin-left: -9rem;
+}
+
+.priority-div input {
+    margin-left: -9rem;
+}
+
+.added-priority {
+    background: radial-gradient(var(--white), var(--primary-color));
 }

@@ -7,6 +7,7 @@
     --white: #fff;
     --black: #000000;
     --navbar-color: #2C272E;
+    --brownShade: #85586F;
 }
 
 body {
@@ -68,6 +69,7 @@ nav ul li {
 .login {
     color: var(--white);
 }
+
 .logout-btn {
     font-size: 1.5rem;
     font-weight: 500;
@@ -96,7 +98,9 @@ nav ul li {
     font-weight: 500;
 }
 
-#primary-btn:hover, .login-btn:hover, .login-btn:hover {
+#primary-btn:hover,
+.login-btn:hover,
+.login-btn:hover {
     background-color: var(--background-color);
     color: var(--white);
 }

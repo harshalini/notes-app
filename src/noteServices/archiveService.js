@@ -9,7 +9,6 @@ const AddNoteToArchive = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-        console.log(res)
         return res;
     }
     catch (error) {
@@ -26,7 +25,6 @@ const RestoreFromArchive = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-            console.log(res)
         return res;
     }
     catch (error) {

@@ -9,7 +9,6 @@ const AddNoteToTrash = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-        console.log(res)
         return res;
     }
     catch (error) {
@@ -26,7 +25,6 @@ const RestoreFromTrash = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-        console.log(res)
         return res;
     }
     catch (error) {
@@ -43,7 +41,6 @@ const ArchiveToTrash = async (data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-        console.log(res)
         return res;
     }
     catch (error) {
@@ -58,7 +55,6 @@ const DeleteFromTrash = async(data, _id) => {
             {
                 headers: { authorization: authToken }
             })
-        console.log(res)
         return res;
     }
     catch (error) {
