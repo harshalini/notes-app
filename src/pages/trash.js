@@ -1,18 +1,16 @@
-import { useArchive } from "../context/archiveContext"
 import { Sidebar } from "../components/allComp";
 import { useTrash } from "../context/trashContext";
-export const ArchivePage = () => {
-    const { noteArchive, RestoreArchiveNote } = useArchive();
-    const { ArchiveNoteToTrash } = useTrash();
+export const TrashPage = () => {
+    const { noteTrash, RestoreTrashNote, DeleteNoteFromTrash } = useTrash();
     return (
         <div>
             <Sidebar />
             <div>
                 <div className="archive-div">
-                    <h1 className="note-heading">Your Archives</h1>
-                    {noteArchive.length > 0? 
+                    <h1 className="note-heading">Trash</h1>
+                    {noteTrash.length > 0? 
                     <div className="note-grid">
-                        {noteArchive.map(({ title, content, _id }) => (
+                        {noteTrash.map(({ title, content, _id }) => (
                             <div key={_id} className="added-note">
                                 <div className="title-div">
                                     <h3>{title}</h3>
@@ -21,14 +19,14 @@ export const ArchivePage = () => {
                                     <p className="note-content">{content}</p>
                                 </div>
                                 <div className="note-actions">
-                                    <button onClick={() => RestoreArchiveNote(noteArchive, _id)}><i className="fa-solid fa-arrow-up"></i></button>
-                                    <button onClick={() => ArchiveNoteToTrash(noteArchive, _id)}><i className="fa-solid fa-trash-can"></i></button>
+                                    <button onClick={() => RestoreTrashNote(noteTrash, _id)}><i className="fa-solid fa-trash-arrow-up"></i></button>
+                                    <button onClick={() => DeleteNoteFromTrash(noteTrash, _id)}><i className="fa-solid fa-ban"></i></button>
                                 </div>
                             </div>
                         )
                         )}
                     </div>: 
-                    <h2>No notes in archive</h2>} 
+                    <h2>No notes in Trash</h2>} 
                 </div>
             </div>
         </div>

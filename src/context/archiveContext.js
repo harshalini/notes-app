@@ -34,7 +34,7 @@ const ArchiveProvider = ({ children }) => {
     setNoteArchive(restoredArchiveNote.data.archives)
   }
 
-  return <ArchiveContext.Provider value={{ noteArchive, ArchiveNote, RestoreArchiveNote }}>
+  return <ArchiveContext.Provider value={{ noteArchive, ArchiveNote, RestoreArchiveNote, setNoteArchive }}>
     {children}
   </ArchiveContext.Provider>
 }
