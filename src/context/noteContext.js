@@ -17,7 +17,7 @@ const NoteDataProvider = ({ children }) => {
           headers: { authorization: authToken }
         });
         setNote(notes);
-      } catch(error) {
+      } catch (error) {
         console.log(error);
       }
     })();
@@ -25,7 +25,10 @@ const NoteDataProvider = ({ children }) => {
 
   const [noteState, dispatch] = useReducer(NoteReducer, {
     title: "",
-    content: ""
+    content: "",
+    color: "",
+    label: "",
+    priority: ""
   })
 
   const AddNewNote = async (note) => {
@@ -35,7 +38,7 @@ const NoteDataProvider = ({ children }) => {
 
   return (
     <NotesContext.Provider
-      value={{ noteState, dispatch, note, AddNewNote}}>
+      value={{ noteState, dispatch, note, AddNewNote }}>
       {children}
     </NotesContext.Provider>
   );

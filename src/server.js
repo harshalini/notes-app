@@ -79,11 +79,11 @@ export function makeServer({ environment = "development" } = {}) {
 
       //trash routes (private)
       this.get("/trash", getAllTrashedNotesHandler.bind(this));
-      this.post("/trash/restore/:noteId", 
-      restoreFromTrashHandler.bind(this)
+      this.post("/trash/restore/:noteId",
+        restoreFromTrashHandler.bind(this)
       );
-      this.delete("/trash/delete/:noteId", 
-      deleteFromTrashHandler.bind(this)
+      this.delete("/trash/delete/:noteId",
+        deleteFromTrashHandler.bind(this)
       );
     },
   });
