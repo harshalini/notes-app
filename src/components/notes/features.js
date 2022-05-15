@@ -32,12 +32,12 @@ const NoteLabel = () => {
 
 const NotePriority = () => {
     const { noteState, dispatch } = useNoteData();
-    const priorities = ["High", "Medium", "Low"]
+    const priorities = ["high", "medium", "low"]
     return (
         <div className="note-feature priority-div">
             {priorities.map((notePriority) => {
                 return (
-                    <div>
+                    <div key={notePriority._id}>
                         <input type="radio" id={notePriority} name="label"
                             checked={noteState.priority === notePriority}
                             onChange={() => dispatch({ type: "SET-PRIORITY", payload: notePriority })}
