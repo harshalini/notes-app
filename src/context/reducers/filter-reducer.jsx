@@ -1,18 +1,26 @@
+import { 
+  FILTER_PRIORITY, 
+  REMOVE_PRIORITY, 
+  FILTER_LABEL, 
+  REMOVE_LABEL, 
+  FILTER_COLOR, 
+  REMOVE_COLOR, 
+  CLEAR_FILTERS } from "./constants/filter-constants"
 export const FilterReducer = (filterState, action) => {
   switch (action.type) {
-    case 'FILTER-PRIORITY':
+    case FILTER_PRIORITY:
       return { ...filterState, priorityFilter: [...filterState.priorityFilter, action.payload] }
-    case "REMOVE-PRIORITY":
+    case REMOVE_PRIORITY:
       return { ...filterState, priorityFilter: filterState.priorityFilter.filter((p) => p !== action.payload) }
-    case "FILTER-LABEL":
+    case FILTER_LABEL:
       return { ...filterState, labelFilter: [...filterState.labelFilter, action.payload] }
-    case "REMOVE-LABEL":
+    case REMOVE_LABEL:
       return { ...filterState, labelFilter: filterState.labelFilter.filter(l => l !== action.payload) }
-    case "FILTER-COLOR":
+    case FILTER_COLOR:
       return { ...filterState, colorFilter: [...filterState.colorFilter, action.payload] }
-    case "REMOVE-COLOR":
+    case REMOVE_COLOR:
       return { ...filterState, colorFilter: filterState.colorFilter.filter(c => c !== action.payload) }
-    case "CLEAR-FILTERS":
+    case CLEAR_FILTERS:
       return {
         priorityFilter: "",
         labelFilter: "",

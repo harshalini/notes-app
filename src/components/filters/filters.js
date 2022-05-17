@@ -7,25 +7,14 @@ export const Filters = () => {
     const { individualLabel } = useNoteData();
     const [showFilters, setShowFilters] = useState(false)
 
-    const clickPriority = (e) => {
-        e.target.checked ? filterDispatch({ type: "FILTER-PRIORITY", payload: e.target.value }) : filterDispatch({
-            type: `remove-priority`.toUpperCase(), payload: e.target.value
-        })
-    }
-
-    const clickLabel = (e) => {
-        e.target.checked ? filterDispatch({ type: "FILTER-LABEL", payload: e.target.value }) : filterDispatch({
-            type: `remove-label`.toUpperCase(), payload: e.target.value
-        })
-    }
-    const clickColor = (e) => {
-        e.target.checked ? filterDispatch({ type: "FILTER-COLOR", payload: e.target.value }) : filterDispatch({
-            type: `remove-color`.toUpperCase(), payload: e.target.value
-        })
-    }
-
     const Colors = ["cadetblue", "chocolate", "darkmagenta", "palevioletred", "brown", "goldenrod", "seagreen"]
     const priorityList = ["high", "medium", "low"]
+
+    const clickFilter = (e, filterContent) => {
+        e.target.checked ? filterDispatch({ type: `FILTER-${filterContent}`, payload: e.target.value }) : filterDispatch({
+            type: `REMOVE-${filterContent}`, payload: e.target.value
+        })
+    }
 
     return (
         <div className="filter-div">
@@ -41,7 +30,7 @@ export const Filters = () => {
                             <label htmlFor={eachPriority}>
                                 <input type="checkbox" value={eachPriority} id={eachPriority}
                                     onChange={(e) =>
-                                        clickPriority(e)
+                                        clickFilter(e, "PRIORITY")
                                     }
                                     checked={priorityFilter.includes(eachPriority)}
                                 />
@@ -55,7 +44,7 @@ export const Filters = () => {
                             eachLabel !== "" ?
                                 <label htmlFor={eachLabel}>
                                     <input type="checkbox" value={eachLabel} id={eachLabel}
-                                        onChange={(e) => clickLabel(e)}
+                                        onChange={(e) => clickFilter(e, "LABEL")}
                                         checked={labelFilter.includes(eachLabel)}
                                     />
                                     {eachLabel}
@@ -70,7 +59,7 @@ export const Filters = () => {
                             >
                                 <input type="checkbox" value={color} id={color}
                                     onChange={(e) =>
-                                        clickColor(e)
+                                        clickFilter(e, "COLOR")
                                     }
                                     checked={colorFilter.includes(color)}
                                 />
