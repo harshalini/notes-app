@@ -36,9 +36,15 @@ const NoteDataProvider = ({ children }) => {
     setNote(getNote.data.notes)
   }
 
+  const allLabels = note.reduce((acc, curr) => {
+    return (acc = [...acc, curr.label]);
+  }, []);
+
+  const labelSet = [...new Set(allLabels)];
+  const individualLabel = labelSet.filter((label) => label !== undefined);
   return (
     <NotesContext.Provider
-      value={{ noteState, dispatch, note, AddNewNote }}>
+      value={{ noteState, dispatch, note, AddNewNote, individualLabel }}>
       {children}
     </NotesContext.Provider>
   );

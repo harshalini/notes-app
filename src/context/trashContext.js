@@ -23,6 +23,7 @@ const TrashProvider = ({ children }) => {
 
   const TrashNote = async (noteTrash, _id) => {
     const getTrash = await AddNoteToTrash(noteTrash, _id)
+    setNoteTrash(getTrash.data.trash)
   }
 
   const RestoreTrashNote = async (noteTrash, _id) => {

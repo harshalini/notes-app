@@ -1,0 +1,76 @@
+.filter-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(var(--white), var(--secondary-color));
+    color: var(--black);
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: absolute;
+    z-index: 15;
+    margin-top: 8rem;
+    right: 7rem;
+    padding-top: 0.5rem;
+}
+
+.filter-div button {
+    position: fixed;
+    top: 8rem;
+    right: 0rem;
+    cursor: pointer;
+}
+
+
+.filter-div button span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.color-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+
+}
+
+.color-filter label {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.color-filter input {
+    display: none;
+}
+
+.filter-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-left: -9rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+}
+.filter-flex label {
+    cursor: pointer;
+}
+.filter-flex input {
+    margin-right: -8rem;
+    cursor: pointer;
+}
+
+.filter-div span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.clear-btn {
+    margin-right: 7rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
