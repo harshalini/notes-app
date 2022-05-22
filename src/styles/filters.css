@@ -9,15 +9,15 @@
     font-weight: 500;
     position: absolute;
     z-index: 15;
-    margin-top: 8rem;
+    margin-top: 6.5rem;
     right: 7rem;
     padding-top: 0.5rem;
 }
 
 .filter-div button {
-    position: fixed;
-    top: 8rem;
-    right: 0rem;
+    position: absolute;
+    top: 0rem;
+    right: -7rem;
     cursor: pointer;
 }
 
@@ -51,10 +51,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-left: -9rem;
     padding: 0.5rem;
     flex-wrap: wrap;
+    padding-bottom: 0;
 }
 .filter-flex label {
     cursor: pointer;

@@ -10,7 +10,8 @@ const FilterDataProvider = ({ children }) => {
   ] = useReducer(FilterReducer, {
     priorityFilter: "",
     labelFilter: "",
-    colorFilter: ""
+    colorFilter: "",
+    dateSort: 0
   });
 
   return (

@@ -5,7 +5,9 @@ import {
   REMOVE_LABEL, 
   FILTER_COLOR, 
   REMOVE_COLOR, 
-  CLEAR_FILTERS } from "./constants/filter-constants"
+  CLEAR_FILTERS,
+  SORT_BY_DATE
+} from "./constants/filter-constants"
 export const FilterReducer = (filterState, action) => {
   switch (action.type) {
     case FILTER_PRIORITY:
@@ -20,11 +22,14 @@ export const FilterReducer = (filterState, action) => {
       return { ...filterState, colorFilter: [...filterState.colorFilter, action.payload] }
     case REMOVE_COLOR:
       return { ...filterState, colorFilter: filterState.colorFilter.filter(c => c !== action.payload) }
+    case SORT_BY_DATE:
+      return {...filterState, dateSort: action.payload}
     case CLEAR_FILTERS:
       return {
         priorityFilter: "",
         labelFilter: "",
-        colorFilter: ""
+        colorFilter: "",
+        dateSort: 0
       };
     default:
       return filterState;

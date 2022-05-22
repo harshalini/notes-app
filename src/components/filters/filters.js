@@ -3,7 +3,7 @@ import { useFilteredData, useNoteData } from "../../context/allContext"
 
 export const Filters = () => {
     const { filterState, filterDispatch } = useFilteredData();
-    const { priorityFilter, labelFilter, colorFilter } = filterState;
+    const { priorityFilter, labelFilter, colorFilter, dateSort } = filterState;
     const { individualLabel } = useNoteData();
     const [showFilters, setShowFilters] = useState(false)
 
@@ -39,7 +39,8 @@ export const Filters = () => {
                         ))}
                     </div>
                     <span>Filter by Label</span>
-                    {<div className="filter-flex">
+                    {individualLabel.length > 0 ?
+                    <div className="filter-flex">
                         {individualLabel.map((eachLabel) => (
                             eachLabel !== "" ?
                                 <label htmlFor={eachLabel}>
@@ -50,21 +51,37 @@ export const Filters = () => {
                                     {eachLabel}
                                 </label> : null
                         ))}
-                    </div>}
+                    </div> : <p>No labels added yet</p>
+}
                     <span>Filter by color</span>
                     <div className="color-filter">
                         {Colors.map((color) => (
-                            <label className="note-color" htmlFor={color}
-                                style={{ backgroundColor: color }}
-                            >
+                            <label className={`note-color color-${color}`} htmlFor={color}>
                                 <input type="checkbox" value={color} id={color}
-                                    onChange={(e) =>
+                                    onChange={(e) => 
                                         clickFilter(e, "COLOR")
                                     }
                                     checked={colorFilter.includes(color)}
                                 />
                             </label>
                         ))}
+                    </div>
+                    <span>Sort by Date</span>
+                    <div className="filter-flex">
+                        <label>
+                            <input type="radio"
+                            onChange={() => filterDispatch({type: "SORT_BY_DATE", payload: "latest_to_oldest"})}
+                            checked = {dateSort === "latest_to_oldest"}
+                            />
+                            Latest to oldest
+                        </label>
+                        <label>
+                            <input type="radio"
+                            onChange={() => filterDispatch({type: "SORT_BY_DATE", payload: "oldest_to_latest"})}
+                            checked = {dateSort === "oldest_to_latest"}
+                            />
+                            Oldest to latest
+                        </label>
                     </div>
                 </div>
                 :

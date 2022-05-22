@@ -98,7 +98,7 @@
 
 .note-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(21.5rem, 1fr));
     gap: 2rem;
     margin: 2rem 2rem 2rem 18rem;
 }
@@ -148,10 +148,12 @@
     display: flex;
     justify-items: flex-start;
     margin-left: 1rem;
+   
 }
 
 .content-div {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
 }
 
 .note-content {
@@ -164,10 +166,10 @@
 }
 
 .note-actions {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.note-actions button {
+.note-actions button, .note-btn {
     font-size: 1.1rem;
     background: none;
     border: none;
@@ -243,6 +245,7 @@
 
 .label-and-priority {
     display: flex;
+    margin-bottom: 0rem;
 }
 
 .note-flex {
@@ -277,4 +280,58 @@
 
 .added-priority {
     background: radial-gradient(var(--white), var(--primary-color));
+}
+
+.pin-button {
+    background: none;
+    border: none;
+    margin-left: 20rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pinned {
+    color: var(--primary-color)
+}
+.unpinned {
+    color: var(--white)
+}
+.mg-top {
+    margin-top: 0.5rem;
+    position: absolute;
+    margin-left: 9rem;
+}
+.update-btn {
+    background-color: var(--primary-color);
+    color: var(--black);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: -3rem;
+    margin-top: -0rem;
+    padding: 0.5rem;
+    border-radius: 20%;
+    cursor: pointer;
+}
+.date-div {
+   display: flex;
+   width: 20rem;
+   justify-content: space-between;
+   margin: auto;
+   font-weight: 500;
+}
+.cancel-btn-div {
+   position: absolute;
+   margin-top: -2.5rem;
+}
+.cancel-btn {
+   height: 2.5rem;
+   width: 2.5rem;
+   border-radius: 50%;
+   background-color: var(--navbar-color);
+   border: solid 2px var(--secondary-color);
+   cursor: pointer;
+   
+}
+.cancel-btn i {
+    color: var(--secondary-color);
 }
