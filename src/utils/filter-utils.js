@@ -7,7 +7,7 @@ export const GetPriority = (filteredNotes) => {
   return filteredNotes;
 }
 
-export const getLabeledNotes = (filteredNotes) => {
+export const GetLabeledNotes = (filteredNotes) => {
   const { filterState: {labelFilter}} = useFilteredData();
   labelFilter.length !== 0 ?
     filteredNotes = filteredNotes.filter((note) => labelFilter.includes(note.label)) :

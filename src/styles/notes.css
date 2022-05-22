@@ -98,7 +98,7 @@
 
 .note-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(21.5rem, 1fr));
     gap: 2rem;
     margin: 2rem 2rem 2rem 18rem;
 }
@@ -309,8 +309,8 @@
     margin-left: -3rem;
     margin-top: -0rem;
     padding: 0.5rem;
-     border-radius: 20%;
-     cursor: pointer;
+    border-radius: 20%;
+    cursor: pointer;
 }
 .date-div {
    display: flex;

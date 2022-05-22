@@ -56,9 +56,7 @@ export const Filters = () => {
                     <span>Filter by color</span>
                     <div className="color-filter">
                         {Colors.map((color) => (
-                            <label className="note-color" htmlFor={color}
-                                style={{ backgroundColor: color }}
-                            >
+                            <label className={`note-color color-${color}`} htmlFor={color}>
                                 <input type="checkbox" value={color} id={color}
                                     onChange={(e) => 
                                         clickFilter(e, "COLOR")

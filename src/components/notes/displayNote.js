@@ -1,13 +1,13 @@
 import React from "react";
 import { useNoteData, useArchive, useTrash } from "../../context/allContext";
-import { GetPriority, GetColor, getLabeledNotes, DateSort } from "../../utils/filter-utils";
+import { GetPriority, GetColor, GetLabeledNotes, DateSort } from "../../utils/filter-utils";
 
 export const DisplayNote = () => {
   const { note, dispatch, setNoteEdit } = useNoteData();
   const { ArchiveNote } = useArchive();
   const { TrashNote } = useTrash();
   const compose = (...getNoteCard) => (note) => getNoteCard.reduce((data, getNoteCard) => getNoteCard(data), note);
-  const filteredNotes = compose(GetPriority, GetColor, getLabeledNotes, DateSort)(note)
+  const filteredNotes = compose(GetPriority, GetColor, GetLabeledNotes, DateSort)(note)
   const pinnedNotes = [], unPinnedNotes = []
   const getPinnedNotes = filteredNotes.map(note => note.pin ? pinnedNotes.push(note) : pinnedNotes)
   const getUnpinnedNotes = filteredNotes.map(note => note.pin === false ? unPinnedNotes.push(note) : unPinnedNotes)

@@ -1,21 +1,22 @@
 export const NoteReducer = (noteState, action) => {
-    switch (action.type) {
+    const { type, payload } = action;
+    switch (type) {
         case "SET-TITLE":
-            return { ...noteState, title: action.payload }
+            return { ...noteState, title: payload }
         case "SET-CONTENT":
-            return { ...noteState, content: action.payload }
+            return { ...noteState, content: payload }
         case "SET-COLOR":
-            return { ...noteState, color: action.payload }
+            return { ...noteState, color: payload }
         case "SET-LABEL":
-            return { ...noteState, label: action.payload }
+            return { ...noteState, label: payload }
         case "SET-PRIORITY":
-            return { ...noteState, priority: action.payload }
+            return { ...noteState, priority: payload }
         case "SET-PIN":
-            return {...noteState, pin: action.payload }
+            return { ...noteState, pin: payload }
         case "SET-DATE":
-            return { ...noteState, date: action.payload}
+            return { ...noteState, date: payload }
         case "EDIT_NOTE":
-            return {...action.payload}
+            return { ...payload }
         case "CLEAR-NOTE":
             return {
                 title: "",
