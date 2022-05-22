@@ -37,14 +37,12 @@ const NoteDataProvider = ({ children }) => {
 
   const AddNewNote = async (note) => {
     const getNote = await AddNoteHandler(note)
-    console.log(getNote.data.notes)
     setNote(getNote.data.notes)
   }
 
   const UpdateNote = async (note, _id) => {
     const response = await EditNoteHandler(note, _id)
     setNote(response.data.notes)
-    console.log(response.data.notes)
   }
 
   const allLabels = note.reduce((acc, curr) => {
