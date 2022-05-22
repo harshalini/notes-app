@@ -48,7 +48,7 @@ const ArchiveToTrash = async (data, _id) => {
     }
 }
 
-const DeleteFromTrash = async(data, _id) => {
+const DeleteFromTrash = async(_id) => {
     const authToken = localStorage.getItem("authToken")
     try {
         const res = await axios.delete(`/api/trash/delete/${_id}`,

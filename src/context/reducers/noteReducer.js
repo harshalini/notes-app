@@ -10,13 +10,21 @@ export const NoteReducer = (noteState, action) => {
             return { ...noteState, label: action.payload }
         case "SET-PRIORITY":
             return { ...noteState, priority: action.payload }
+        case "SET-PIN":
+            return {...noteState, pin: action.payload }
+        case "SET-DATE":
+            return { ...noteState, date: action.payload}
+        case "EDIT_NOTE":
+            return {...action.payload}
         case "CLEAR-NOTE":
             return {
                 title: "",
                 content: "",
                 color: "",
                 label: "",
-                priority: ""
+                priority: "",
+                pin: false,
+                date: Number(new Date())
             }
         default:
             return noteState;

@@ -1,7 +1,8 @@
 import { createContext, useContext, useReducer, useState, useEffect } from "react";
 import { NoteReducer } from "./reducers/noteReducer";
 import axios from "axios";
-import { AddNoteHandler } from "../noteServices/allServices";
+import { AddNoteHandler, EditNoteHandler } from "../noteServices/allServices";
+
 const NotesContext = createContext()
 
 const NoteDataProvider = ({ children }) => {
@@ -28,12 +29,22 @@ const NoteDataProvider = ({ children }) => {
     content: "",
     color: "",
     label: "",
-    priority: ""
+    priority: "",
+    pin: false,
+    date: Number(new Date())
   })
+  const [noteEdit, setNoteEdit] = useState(false)
 
   const AddNewNote = async (note) => {
     const getNote = await AddNoteHandler(note)
+    console.log(getNote.data.notes)
     setNote(getNote.data.notes)
+  }
+
+  const UpdateNote = async (note, _id) => {
+    const response = await EditNoteHandler(note, _id)
+    setNote(response.data.notes)
+    console.log(response.data.notes)
   }
 
   const allLabels = note.reduce((acc, curr) => {
@@ -44,7 +55,8 @@ const NoteDataProvider = ({ children }) => {
   const individualLabel = labelSet.filter((label) => label !== undefined);
   return (
     <NotesContext.Provider
-      value={{ noteState, dispatch, note, AddNewNote, individualLabel }}>
+      value={{ noteState, dispatch, note, AddNewNote, individualLabel, UpdateNote, setNoteEdit, noteEdit
+      }}>
       {children}
     </NotesContext.Provider>
   );

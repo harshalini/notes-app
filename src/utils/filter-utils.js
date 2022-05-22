@@ -22,3 +22,12 @@ export const GetColor = (filteredNotes) => {
   filteredNotes;
   return filteredNotes
 }
+
+export const DateSort = (data) => {
+  const { filterState: {dateSort} } = useFilteredData()
+  if(dateSort === "latest_to_oldest")
+  return [...data].sort((a, b) => b.date - a.date)
+  else if(dateSort === "oldest_to_latest")
+  return [...data].sort((a, b) => a.date - b.date)
+  return data
+}
