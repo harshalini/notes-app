@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 export const Sidebar = () => {
+    const activeStyle = ({isActive}) => ({
+        background: isActive? "var(--primary-color)": "none",
+        padding: isActive && "0.5rem 4rem 0.5rem 0.5rem",
+        fontSize: isActive && "1rem"
+      })
     return (
         <div className="flex-div">
             <aside className="lib-sidebar">
                 <ul>
-                    <Link to="/notes"><li><i className="sidebar-icon fa-solid fa-clipboard"></i><span>Notes</span></li></Link>
-                    <Link to="/archive"><li><i className="sidebar-icon fa-solid fa-arrow-down-long"></i><span>Archive</span></li></Link>
-                    <Link to="/trash"><li><i className="sidebar-icon fa-solid fa-trash-can"></i><span>Trash</span></li></Link>
+                <li><NavLink to="/notes" style={activeStyle}><i className="sidebar-icon fa-solid fa-clipboard"></i><span>Notes</span></NavLink></li>
+                <li> <NavLink to="/archive" style={activeStyle}><i className="sidebar-icon fa-solid fa-arrow-down-long"></i><span>Archive</span></NavLink></li>
+                <li><NavLink to="/trash" style={activeStyle}><i className="sidebar-icon fa-solid fa-trash-can"></i><span>Trash</span></NavLink></li>
                 </ul>
             </aside>
         </div>
